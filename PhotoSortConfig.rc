@@ -1,0 +1,3 @@
+SOURCE_DEFOULT=/media/sda1					#domyślny forder źródłowy
+DESTINATION_DEFOULT=/home/knoppix/Desktop	#domyślny folder docelowy
+TASK_DEFOULT="Kopiuj"

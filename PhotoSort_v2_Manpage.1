@@ -1,0 +1,49 @@
+.\" Manpage dla PhotoSort
+.\" Zauważone błędy i uwagi proszę zgłaszać pod ewelina.walkusz@protonmail.com
+.\" 
+.TH PhotoSort 1 "Czerwiec 2021" "2.0" "man page dla PhotoSort"
+.SH NAZWA
+PhotoSort - Organizer Zdjęć
+.SH SKŁADNIA
+.B PhotoSort [\fB\-s\fR SOURCE_PATH] [\fB-d\fR DESTINATION_PATH] [\fB-c\fR] 
+.SH OPIS
+Niniejszy manual page opisuje PhotoSort. Skrypt wyszukuje w zadanym miejscu pliki graficzne, sortuje do odpowiednich katalogów oraz zmienia nazwy, bazując na dacie i czasie wykonania zdjęcia, przy wykorzystaniu danych EXIF (jeśli nie są dostępne – na podstawie daty utworzenia/modyfikacji pliku).
+.br
+Format nazw w drzewie katalogów IYYYY/YYYYMM/YYYYMMDD Format nazwy pliku IYYYYMMDD_HHMMSS.EXT
+.br
+Skrypt do prawidłowego działania wymaga zenity, exiftool, jq. Po uruchomieniu sprawdza, czy dane moduły są zainstalowane.
+.br
+W pliku konfigracyjnym można zmienić ustawienia domyślne.
+.SH OPCJE
+.TP
+Wywołanie skryptu bez opcji spowoduje uruchomienie skryptu z pełnym wykorzystaniem okien dialogowych zenity. Niektóre czynności można (nie jest to konieczne) zautomatyzować wywołując skrypt z odpowiednimi opcjami:
+.TP
+[\fB-s\fR SOURCE_PATH]
+Jako argument przyjmuje ścieżkę dostępu do katalogu źródłowego. Domyślna ścieżka to /media/sda1
+.TP
+[\fB-d\fR DESTINATION_PATH]
+Jako argument przyjmuje ścieżkę dostępu do katalogu docelowego. Domyślna ścieżka to /home/knoppix/Desktop
+.TP
+[\fB-c\fR]
+Wybrane zadanie: Kopiuj.
+.TP
+[\fB-m\fR]
+Wybrane zadanie: Przenieś.
+.TP
+[\fB-h\fR]
+Pomoc.
+.TP
+[\fB-v\fR]
+Informacje o wersji i autorze.
+.PP
+.SH PRZYKŁADY
+Przykładowe wywołanie skryptu:
+.RS
+PhotoSort.sh -s /media/sda1 -d /home/knoppix/Desktop -c
+.RE
+.PP
+.SH BŁĘDY
+Brak znanych błędów.
+.PP
+.SH AUTOR
+Ewelina Walkusz-Minko [ewelina.walkusz@protonmail.com]
